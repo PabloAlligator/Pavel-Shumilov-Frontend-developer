@@ -1,4 +1,16 @@
 @charset "UTF-8";
+html, body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+img, svg, picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-sizing: border-box;
+}
+
 #preloader {
   position: fixed;
   top: 0;
@@ -2224,5 +2236,38 @@ main {
   }
   .footer .footer-rights p {
     font-size: 12px;
+  }
+}
+/* Mobile fixes — сброс крупных абсолютных заголовков и padding по бокам */
+@media (max-width: 768px) {
+  main, .Projects, .skills, .education, .contacts, .footer {
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  /* Сбрасываем абсолютное позиционирование больших заголовков, чтобы они не выходили за экран */
+  .Projects h2, .Projects h3,
+  .skills h2, .skills h3,
+  .education h2, .education h3,
+  .contacts h2, .contacts h3 {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 6px auto !important;
+    text-align: center !important;
+    white-space: normal !important;
+    max-width: 100%;
+    overflow: visible;
+  }
+  /* Предотвратить переполнение трансформами / тенями */
+  .ProjectsOne, .ProjectsTwo, .ProjectsOne *, .ProjectsTwo * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  /* Если какие-то блоки всё ещё создают горизонтальный скролл — временно скрываем */
+  body.hide-overflow-x, html.hide-overflow-x {
+    overflow-x: hidden !important;
   }
 }/*# sourceMappingURL=style1.css.map */

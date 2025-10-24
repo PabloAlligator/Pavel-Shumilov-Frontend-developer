@@ -22,6 +22,20 @@ $Light-blue: #4a86ff;
 $animation-duration: 6s;
 $animation-delay-step: 1s;
 
+html, body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+img, svg, picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-sizing: border-box;
+}
+
+
+
 #preloader {
   position: fixed;
   top: 0;
@@ -2977,92 +2991,41 @@ main {
             font-size: 12px;
         }
     }
-}
+} 
 
+/* Mobile fixes — сброс крупных абсолютных заголовков и padding по бокам */
 @media (max-width: 768px) {
-  /* страховка против горизонтального скролла */
-  html, body { overflow-x: hidden; }
-
-  /* общие контейнеры */
-  .Projects, .skills, .education, .contacts, .footer {
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto;
+  main, .Projects, .skills, .education, .contacts, .footer {
     padding-left: 16px;
     padding-right: 16px;
     box-sizing: border-box;
+    max-width: 100%;
   }
 
-  /* Projects */
-  .Projects {
-    position: relative;
-    padding-top: 80px;
-    h2, h3, h4 { position: static; text-align: center; margin: 6px 0; }
-    .project-container { flex-direction: column; gap: 18px; align-items: stretch; }
-    &One, &Two {
-      width: 100%;
-      max-width: 100%;
-      margin-top: 0;
-      margin-bottom: 12px;
-      height: auto;
-      padding: 12px;
-    }
-    .project-details-one, .project-details-two { margin: 0; padding: 10px 0; }
+  /* Сбрасываем абсолютное позиционирование больших заголовков, чтобы они не выходили за экран */
+  .Projects h2, .Projects h3,
+  .skills h2, .skills h3,
+  .education h2, .education h3,
+  .contacts h2, .contacts h3 {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 6px auto !important;
+    text-align: center !important;
+    white-space: normal !important;
+    max-width: 100%;
+    overflow: visible;
   }
 
-  /* Skills */
-  .skills {
-    padding-top: 60px;
-    h2, h3, h4 { position: static; text-align: center; margin: 8px 0; }
-    /* двухколоночный поток вертикально */
-    .skills-container, &-container {
-      display: block;
-      column-count: 2;
-      column-gap: 12px;
-      max-width: 680px;
-      margin: 18px auto;
-    }
-    .skill-item {
-      display: inline-block;
-      width: 100%;
-      margin: 0 0 12px;
-      break-inside: avoid;
-      -webkit-column-break-inside: avoid;
-      box-sizing: border-box;
-    }
+  /* Предотвратить переполнение трансформами / тенями */
+  .ProjectsOne, .ProjectsTwo, .ProjectsOne *, .ProjectsTwo * {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
-  /* Education */
-  .education {
-    padding-top: 40px;
-    h2,h3,h4 { position: static; text-align: center; margin: 8px 0; }
-    .educationLineContainer { position: static; margin: 12px auto; max-width: 720px; padding: 0; }
-    .education_content {
-      position: relative;
-      margin-top: 8px;
-      padding: 16px 0;
-      max-width: 720px;
-      &-hr { position: absolute; left: 50%; transform: translateX(-50%); top: 8px; height: calc(100% - 16px); }
-      &-item { margin-bottom: 12px; padding: 12px; }
-    }
-  }
-
-  /* Contacts */
-  .contacts {
-    padding-top: 40px;
-    h2,h3,h4 { position: static; text-align: center; margin: 8px 0; }
-    .contactsLineContainer { position: static; margin: 8px auto 12px; max-width: 720px; padding: 0; display:flex; justify-content:center; }
-    &__container { flex-direction: column; gap: 16px; margin-top: 12px; align-items: stretch; }
-    .contacts-left { width: 100%; text-align: center; display: block; }
-    .contacts-right { width: 100%; margin: 0; padding: 12px; }
-    .contacts-right-form { width: 100%; }
-  }
-
-  /* Footer */
-  .footer {
-    padding: 28px 12px;
-    > hr { margin-bottom: 12px; }
-    &LineContainer { position: static; margin: 12px auto; }
-    &-rights { padding-top: 8px; }
+  /* Если какие-то блоки всё ещё создают горизонтальный скролл — временно скрываем */
+  body.hide-overflow-x, html.hide-overflow-x {
+    overflow-x: hidden !important;
   }
 }
