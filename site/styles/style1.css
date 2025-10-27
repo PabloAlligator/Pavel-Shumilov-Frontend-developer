@@ -1,4 +1,16 @@
 @charset "UTF-8";
+html, body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+img, svg, picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-sizing: border-box;
+}
+
 #preloader {
   position: fixed;
   top: 0;
@@ -1658,6 +1670,7 @@ main {
   flex-direction: column;
   align-items: center;
   position: relative;
+  margin-top: -300px;
 }
 .contacts h2 {
   margin-top: 262px;
@@ -1850,6 +1863,7 @@ main {
     min-height: auto;
     align-items: center;
     display: flex;
+    margin-top: 50px;
     flex-direction: column;
     justify-content: flex-start;
   }
@@ -2103,7 +2117,7 @@ main {
     font-size: 12px;
   }
 }
-html,
+HEAD html,
 body,
 main {
   overflow-x: hidden;
@@ -2131,41 +2145,303 @@ img {
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
+  /* Mobile fixes — сброс крупных абсолютных заголовков и padding по бокам */
 }
-
-/* Проекционные карточки и колонки — занимают доступную ширину */
-.ProjectsOne,
-.ProjectsTwo,
-.ProjectsOneBlock img,
-.ProjectsTwoBlock img {
-  width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box;
+@media (max-width: 768px) {
+  .Projects,
+  .skills,
+  .section__one,
+  .section__two,
+  .project-container,
+  .skills-container,
+  .education,
+  .contacts {
+    /* Проекционные карточки и колонки — занимают доступную ширину */
+    /* Сетка навыков — две колонки на телефоне, одна на очень узких экранах */
+    /* Очень узкие экраны — одна колонка */
+    /* Удаляем/ограничиваем "вылезающие" абсолютные элементы */
+    /* Сбрасываем абсолютное позиционирование больших заголовков, чтобы они не выходили за экран */
+    /* Предотвратить переполнение трансформами / тенями */
+    /* Если какие-то блоки всё ещё создают горизонтальный скролл — временно скрываем */
+  }
+  .Projects main, .Projects .Projects, .Projects .skills, .Projects .education, .Projects .contacts, .Projects .footer,
+  .skills main,
+  .skills .Projects,
+  .skills .skills,
+  .skills .education,
+  .skills .contacts,
+  .skills .footer,
+  .section__one main,
+  .section__one .Projects,
+  .section__one .skills,
+  .section__one .education,
+  .section__one .contacts,
+  .section__one .footer,
+  .section__two main,
+  .section__two .Projects,
+  .section__two .skills,
+  .section__two .education,
+  .section__two .contacts,
+  .section__two .footer,
+  .project-container main,
+  .project-container .Projects,
+  .project-container .skills,
+  .project-container .education,
+  .project-container .contacts,
+  .project-container .footer,
+  .skills-container main,
+  .skills-container .Projects,
+  .skills-container .skills,
+  .skills-container .education,
+  .skills-container .contacts,
+  .skills-container .footer,
+  .education main,
+  .education .Projects,
+  .education .skills,
+  .education .education,
+  .education .contacts,
+  .education .footer,
+  .contacts main,
+  .contacts .Projects,
+  .contacts .skills,
+  .contacts .education,
+  .contacts .contacts,
+  .contacts .footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .Projects .ProjectsOne,
+  .Projects .ProjectsTwo,
+  .Projects .ProjectsOneBlock img,
+  .Projects .ProjectsTwoBlock img,
+  .skills .ProjectsOne,
+  .skills .ProjectsTwo,
+  .skills .ProjectsOneBlock img,
+  .skills .ProjectsTwoBlock img,
+  .section__one .ProjectsOne,
+  .section__one .ProjectsTwo,
+  .section__one .ProjectsOneBlock img,
+  .section__one .ProjectsTwoBlock img,
+  .section__two .ProjectsOne,
+  .section__two .ProjectsTwo,
+  .section__two .ProjectsOneBlock img,
+  .section__two .ProjectsTwoBlock img,
+  .project-container .ProjectsOne,
+  .project-container .ProjectsTwo,
+  .project-container .ProjectsOneBlock img,
+  .project-container .ProjectsTwoBlock img,
+  .skills-container .ProjectsOne,
+  .skills-container .ProjectsTwo,
+  .skills-container .ProjectsOneBlock img,
+  .skills-container .ProjectsTwoBlock img,
+  .education .ProjectsOne,
+  .education .ProjectsTwo,
+  .education .ProjectsOneBlock img,
+  .education .ProjectsTwoBlock img,
+  .contacts .ProjectsOne,
+  .contacts .ProjectsTwo,
+  .contacts .ProjectsOneBlock img,
+  .contacts .ProjectsTwoBlock img {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  .Projects .skills-container,
+  .Projects .skills-container,
+  .skills .skills-container,
+  .skills .skills-container,
+  .section__one .skills-container,
+  .section__one .skills-container,
+  .section__two .skills-container,
+  .section__two .skills-container,
+  .project-container .skills-container,
+  .project-container .skills-container,
+  .skills-container .skills-container,
+  .skills-container .skills-container,
+  .education .skills-container,
+  .education .skills-container,
+  .contacts .skills-container,
+  .contacts .skills-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 780px;
+  }
 }
-
-/* Сетка навыков — две колонки на телефоне, одна на очень узких экранах */
-.skills-container,
-.skills-container {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  width: 100%;
-  max-width: 780px;
-}
-
-/* Очень узкие экраны — одна колонка */
-@media (max-width: 380px) {
-  .skills-container {
+@media (max-width: 768px) and (max-width: 380px) {
+  .Projects .skills-container,
+  .skills .skills-container,
+  .section__one .skills-container,
+  .section__two .skills-container,
+  .project-container .skills-container,
+  .skills-container .skills-container,
+  .education .skills-container,
+  .contacts .skills-container {
     grid-template-columns: 1fr !important;
   }
 }
-/* Удаляем/ограничиваем "вылезающие" абсолютные элементы */
-.section__one-animated-tr,
-.section__one-animated-tl,
-.section__one-animated-rm,
-.section__one-animated-bl,
-.section__one-animated-br {
-  max-width: 100%;
+@media (max-width: 768px) {
+  .Projects .section__one-animated-tr,
+  .Projects .section__one-animated-tl,
+  .Projects .section__one-animated-rm,
+  .Projects .section__one-animated-bl,
+  .Projects .section__one-animated-br,
+  .skills .section__one-animated-tr,
+  .skills .section__one-animated-tl,
+  .skills .section__one-animated-rm,
+  .skills .section__one-animated-bl,
+  .skills .section__one-animated-br,
+  .section__one .section__one-animated-tr,
+  .section__one .section__one-animated-tl,
+  .section__one .section__one-animated-rm,
+  .section__one .section__one-animated-bl,
+  .section__one .section__one-animated-br,
+  .section__two .section__one-animated-tr,
+  .section__two .section__one-animated-tl,
+  .section__two .section__one-animated-rm,
+  .section__two .section__one-animated-bl,
+  .section__two .section__one-animated-br,
+  .project-container .section__one-animated-tr,
+  .project-container .section__one-animated-tl,
+  .project-container .section__one-animated-rm,
+  .project-container .section__one-animated-bl,
+  .project-container .section__one-animated-br,
+  .skills-container .section__one-animated-tr,
+  .skills-container .section__one-animated-tl,
+  .skills-container .section__one-animated-rm,
+  .skills-container .section__one-animated-bl,
+  .skills-container .section__one-animated-br,
+  .education .section__one-animated-tr,
+  .education .section__one-animated-tl,
+  .education .section__one-animated-rm,
+  .education .section__one-animated-bl,
+  .education .section__one-animated-br,
+  .contacts .section__one-animated-tr,
+  .contacts .section__one-animated-tl,
+  .contacts .section__one-animated-rm,
+  .contacts .section__one-animated-bl,
+  .contacts .section__one-animated-br {
+    max-width: 100%;
+    max-width: 100%;
+  }
+  .Projects .Projects h2, .Projects .Projects h3,
+  .Projects .skills h2, .Projects .skills h3,
+  .Projects .education h2, .Projects .education h3,
+  .Projects .contacts h2, .Projects .contacts h3,
+  .skills .Projects h2,
+  .skills .Projects h3,
+  .skills .skills h2,
+  .skills .skills h3,
+  .skills .education h2,
+  .skills .education h3,
+  .skills .contacts h2,
+  .skills .contacts h3,
+  .section__one .Projects h2,
+  .section__one .Projects h3,
+  .section__one .skills h2,
+  .section__one .skills h3,
+  .section__one .education h2,
+  .section__one .education h3,
+  .section__one .contacts h2,
+  .section__one .contacts h3,
+  .section__two .Projects h2,
+  .section__two .Projects h3,
+  .section__two .skills h2,
+  .section__two .skills h3,
+  .section__two .education h2,
+  .section__two .education h3,
+  .section__two .contacts h2,
+  .section__two .contacts h3,
+  .project-container .Projects h2,
+  .project-container .Projects h3,
+  .project-container .skills h2,
+  .project-container .skills h3,
+  .project-container .education h2,
+  .project-container .education h3,
+  .project-container .contacts h2,
+  .project-container .contacts h3,
+  .skills-container .Projects h2,
+  .skills-container .Projects h3,
+  .skills-container .skills h2,
+  .skills-container .skills h3,
+  .skills-container .education h2,
+  .skills-container .education h3,
+  .skills-container .contacts h2,
+  .skills-container .contacts h3,
+  .education .Projects h2,
+  .education .Projects h3,
+  .education .skills h2,
+  .education .skills h3,
+  .education .education h2,
+  .education .education h3,
+  .education .contacts h2,
+  .education .contacts h3,
+  .contacts .Projects h2,
+  .contacts .Projects h3,
+  .contacts .skills h2,
+  .contacts .skills h3,
+  .contacts .education h2,
+  .contacts .education h3,
+  .contacts .contacts h2,
+  .contacts .contacts h3 {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 6px auto !important;
+    text-align: center !important;
+    white-space: normal !important;
+    max-width: 100%;
+    overflow: visible;
+  }
+  .Projects .ProjectsOne, .Projects .ProjectsTwo, .Projects .ProjectsOne *, .Projects .ProjectsTwo *,
+  .skills .ProjectsOne,
+  .skills .ProjectsTwo,
+  .skills .ProjectsOne *,
+  .skills .ProjectsTwo *,
+  .section__one .ProjectsOne,
+  .section__one .ProjectsTwo,
+  .section__one .ProjectsOne *,
+  .section__one .ProjectsTwo *,
+  .section__two .ProjectsOne,
+  .section__two .ProjectsTwo,
+  .section__two .ProjectsOne *,
+  .section__two .ProjectsTwo *,
+  .project-container .ProjectsOne,
+  .project-container .ProjectsTwo,
+  .project-container .ProjectsOne *,
+  .project-container .ProjectsTwo *,
+  .skills-container .ProjectsOne,
+  .skills-container .ProjectsTwo,
+  .skills-container .ProjectsOne *,
+  .skills-container .ProjectsTwo *,
+  .education .ProjectsOne,
+  .education .ProjectsTwo,
+  .education .ProjectsOne *,
+  .education .ProjectsTwo *,
+  .contacts .ProjectsOne,
+  .contacts .ProjectsTwo,
+  .contacts .ProjectsOne *,
+  .contacts .ProjectsTwo * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .Projects body.hide-overflow-x, .Projects html.hide-overflow-x,
+  .skills body.hide-overflow-x,
+  .skills html.hide-overflow-x,
+  .section__one body.hide-overflow-x,
+  .section__one html.hide-overflow-x,
+  .section__two body.hide-overflow-x,
+  .section__two html.hide-overflow-x,
+  .project-container body.hide-overflow-x,
+  .project-container html.hide-overflow-x,
+  .skills-container body.hide-overflow-x,
+  .skills-container html.hide-overflow-x,
+  .education body.hide-overflow-x,
+  .education html.hide-overflow-x,
+  .contacts body.hide-overflow-x,
+  .contacts html.hide-overflow-x {
+    overflow-x: hidden !important;
+  }
 }/*# sourceMappingURL=style1.css.map */

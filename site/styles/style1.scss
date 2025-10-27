@@ -24,6 +24,20 @@ $animation-delay-step: 1s;
 // переменные для медиазапросов
 
 
+html, body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+img, svg, picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-sizing: border-box;
+}
+
+
+
 #preloader {
     position: fixed;
     top: 0;
@@ -1815,7 +1829,6 @@ main {
 
     @media (max-width: 520px) {
         padding: 100px 8px 60px;
-
         &-container {
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
@@ -2075,6 +2088,7 @@ main {
     flex-direction: column;
     align-items: center;
     position: relative;
+    margin-top: -300px;
 
     // border: 1px solid red;
 
@@ -2293,6 +2307,7 @@ main {
         min-height: auto;
         align-items: center;
         display: flex;
+        margin-top: 50px;
         flex-direction: column;
         justify-content: flex-start;
 
@@ -2609,8 +2624,9 @@ main {
             font-size: 12px;
         }
     }
-}
+} 
 
+HEAD
 html,
 body,
 main {
@@ -2639,6 +2655,9 @@ img {
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
+/* Mobile fixes — сброс крупных абсолютных заголовков и padding по бокам */
+@media (max-width: 768px) {
+  main, .Projects, .skills, .education, .contacts, .footer {
     padding-left: 16px;
     padding-right: 16px;
 }
@@ -2677,4 +2696,34 @@ img {
 .section__one-animated-bl,
 .section__one-animated-br {
     max-width: 100%;
+    max-width: 100%;
+  }
+
+  /* Сбрасываем абсолютное позиционирование больших заголовков, чтобы они не выходили за экран */
+  .Projects h2, .Projects h3,
+  .skills h2, .skills h3,
+  .education h2, .education h3,
+  .contacts h2, .contacts h3 {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 6px auto !important;
+    text-align: center !important;
+    white-space: normal !important;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  /* Предотвратить переполнение трансформами / тенями */
+  .ProjectsOne, .ProjectsTwo, .ProjectsOne *, .ProjectsTwo * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Если какие-то блоки всё ещё создают горизонтальный скролл — временно скрываем */
+  body.hide-overflow-x, html.hide-overflow-x {
+    overflow-x: hidden !important;
+  }
+}
 }
