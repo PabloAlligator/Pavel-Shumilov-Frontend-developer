@@ -1,10 +1,13 @@
 @charset "UTF-8";
-html, body {
+html,
+body {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
-img, svg, picture {
+img,
+svg,
+picture {
   max-width: 100%;
   height: auto;
   display: block;
@@ -888,32 +891,32 @@ main {
   color: #ffffff;
   font-size: 54px;
 }
-.ProjectsLineContainer {
+.Projects .ProjectsLineContainer {
   display: flex;
   align-items: center;
-  width: 100%;
-  max-width: 200px;
-  margin-top: 250px;
-  padding: 0 20px;
-  position: absolute;
+  justify-content: center;
+  gap: 12px;
+  margin: 8px 0 18px;
+  margin-top: 20px;
+  z-index: 2;
 }
-.ProjectsLineContainer-left, .ProjectsLineContainer-right {
+.Projects .ProjectsLineContainer-left {
   flex: 1;
   height: 2px;
+  max-width: 100px;
+  background: linear-gradient(90deg, transparent 0%, #6454da 90%, #6454da 100%);
 }
-.ProjectsLineContainer-left {
-  background: linear-gradient(90deg, transparent 0%, #6454da 60%, #6454da 100%);
+.Projects .ProjectsLineContainer-right {
+  flex: 1;
+  height: 2px;
+  max-width: 100px;
+  background: linear-gradient(90deg, #6454da 0%, #6454da 10%, transparent 100%);
 }
-.ProjectsLineContainer-right {
-  background: linear-gradient(90deg, #6454da 0%, #6454da 50%, transparent 100%);
-}
-.ProjectsLineContainer-dot {
+.Projects .ProjectsLineContainer-dot {
   width: 8px;
   height: 8px;
   background: #6454da;
   border-radius: 50%;
-  margin: 0 20px;
-  flex-shrink: 0;
 }
 .Projects h4 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -1204,6 +1207,32 @@ main {
     margin-top: 12px;
     font-size: 16px;
   }
+  .ProjectsLineContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 90px;
+    position: absolute;
+  }
+  .ProjectsLineContainer-left, .ProjectsLineContainer-right {
+    flex: 1;
+    height: 2px;
+  }
+  .ProjectsLineContainer-left {
+    background: linear-gradient(90deg, transparent 0%, #6454da 60%, #6454da 100%);
+  }
+  .ProjectsLineContainer-right {
+    background: linear-gradient(90deg, #6454da 0%, #6454da 50%, transparent 100%);
+  }
+  .ProjectsLineContainer-dot {
+    width: 8px;
+    height: 8px;
+    background: #6454da;
+    border-radius: 50%;
+    margin: 0 20px;
+    flex-shrink: 0;
+  }
   .Projects .project-container {
     width: 100%;
     max-width: 980px;
@@ -1281,16 +1310,18 @@ main {
     padding: 60px 12px;
     /* основной заголовок (h3) — поверх h2, по центру */
   }
+  .ProjectsLineContainer {
+    top: 40px;
+  }
   .Projects h2 {
     position: absolute;
-    top: 12px;
+    top: -10px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: clamp(32px, 8vw, 44px);
+    font-size: clamp(50px, 8vw, 44px);
     margin: 0;
     z-index: 0;
     color: #1b1b1b;
-    opacity: 0.12;
     white-space: nowrap;
   }
   .Projects h3 {
@@ -1300,14 +1331,18 @@ main {
     top: calc(12px + clamp(32px, 8vw, 44px) * 0.55);
     transform: translate(-50%, -60%);
     /* поднимет чуть выше центра */
-    font-size: 18px;
+    font-size: 24px;
     margin: 0;
     z-index: 2;
     text-align: center;
     color: #ffffff;
   }
+  .Projects h4 {
+    margin-top: 25px;
+  }
   .Projects .project-container {
     gap: 18px;
+    margin-top: 50px;
   }
   .ProjectsOne, .ProjectsTwo {
     padding: 12px;
@@ -1316,11 +1351,16 @@ main {
   .Projects .project-details-one h3,
   .Projects .project-details-two h3 {
     font-size: 20px;
+    margin-left: 50%;
   }
   .Projects .project-details-one p,
   .Projects .project-details-two p {
     font-size: 14px;
     transform: translateX(-50%);
+    margin-left: 50%;
+    margin-top: -6%;
+    white-space: nowrap;
+    text-align: center;
   }
   .Projects .tech-tag {
     padding: 6px 10px;
@@ -1457,6 +1497,7 @@ main {
 @media (max-width: 520px) {
   .skills {
     padding: 100px 8px 60px;
+    margin-top: -100px;
   }
   .skills-container {
     grid-template-columns: repeat(2, 1fr);
@@ -1469,6 +1510,13 @@ main {
   .skills-decor {
     width: 320px;
     bottom: -20px;
+  }
+  .skills h4 {
+    font-size: 12px;
+  }
+  .skills .skillsLineContainer {
+    margin-top: -20px;
+    margin-bottom: 20px;
   }
   .skills h3 {
     font-size: 28px;
@@ -1654,10 +1702,15 @@ main {
     /* убрать большой фон на очень узких экранах */
   }
   .education h2 {
-    display: none;
+    font-size: 36px;
+    top: 6px;
+    margin-bottom: 10px;
   }
   .education h3 {
     font-size: 20px;
+  }
+  .education h4 {
+    font-size: 12px;
   }
   .education .education_content-item {
     padding: 10px;
@@ -1946,23 +1999,25 @@ main {
     padding: 28px 12px;
   }
   .contacts h2 {
-    font-size: 44px;
+    font-size: 47px;
+    font-weight: 700;
   }
   .contacts h3 {
     font-size: 18px;
   }
   .contacts h4 {
     font-size: 13px;
-    margin-top: 10px;
+    margin-top: 90px;
   }
   .contacts .contacts__container {
     gap: 14px;
+    margin-top: -20px;
   }
   .contacts .contactsLineContainer {
-    max-width: 100%;
+    max-width: 70%;
     padding: 0 12px;
     gap: 10px;
-    margin-top: 18px;
+    margin-top: 68px;
   }
   .contacts .contactsLineContainer-left, .contacts .contactsLineContainer-right {
     height: 1.5px;
@@ -2112,6 +2167,7 @@ main {
   }
   .footer .footerLineContainer {
     width: 160px;
+    margin-top: 90px;
   }
   .footer .footer-rights p {
     font-size: 12px;
@@ -2164,7 +2220,12 @@ img {
     /* Предотвратить переполнение трансформами / тенями */
     /* Если какие-то блоки всё ещё создают горизонтальный скролл — временно скрываем */
   }
-  .Projects main, .Projects .Projects, .Projects .skills, .Projects .education, .Projects .contacts, .Projects .footer,
+  .Projects main,
+  .Projects .Projects,
+  .Projects .skills,
+  .Projects .education,
+  .Projects .contacts,
+  .Projects .footer,
   .skills main,
   .skills .Projects,
   .skills .skills,
@@ -2325,10 +2386,14 @@ img {
     max-width: 100%;
     max-width: 100%;
   }
-  .Projects .Projects h2, .Projects .Projects h3,
-  .Projects .skills h2, .Projects .skills h3,
-  .Projects .education h2, .Projects .education h3,
-  .Projects .contacts h2, .Projects .contacts h3,
+  .Projects .Projects h2,
+  .Projects .Projects h3,
+  .Projects .skills h2,
+  .Projects .skills h3,
+  .Projects .education h2,
+  .Projects .education h3,
+  .Projects .contacts h2,
+  .Projects .contacts h3,
   .skills .Projects h2,
   .skills .Projects h3,
   .skills .skills h2,
@@ -2395,7 +2460,10 @@ img {
     max-width: 100%;
     overflow: visible;
   }
-  .Projects .ProjectsOne, .Projects .ProjectsTwo, .Projects .ProjectsOne *, .Projects .ProjectsTwo *,
+  .Projects .ProjectsOne,
+  .Projects .ProjectsTwo,
+  .Projects .ProjectsOne *,
+  .Projects .ProjectsTwo *,
   .skills .ProjectsOne,
   .skills .ProjectsTwo,
   .skills .ProjectsOne *,
@@ -2427,7 +2495,8 @@ img {
     max-width: 100%;
     box-sizing: border-box;
   }
-  .Projects body.hide-overflow-x, .Projects html.hide-overflow-x,
+  .Projects body.hide-overflow-x,
+  .Projects html.hide-overflow-x,
   .skills body.hide-overflow-x,
   .skills html.hide-overflow-x,
   .section__one body.hide-overflow-x,
