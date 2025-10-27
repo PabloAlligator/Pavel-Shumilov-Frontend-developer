@@ -897,8 +897,10 @@ main {
   justify-content: center;
   gap: 12px;
   margin: 8px 0 18px;
-  margin-top: 20px;
+  margin-top: 220px;
+  position: absolute;
   z-index: 2;
+  width: 200px;
 }
 .Projects .ProjectsLineContainer-left {
   flex: 1;
@@ -1212,8 +1214,8 @@ main {
     align-items: center;
     width: 100%;
     max-width: 200px;
-    margin-top: 90px;
-    position: absolute;
+    top: -90px;
+    position: static;
   }
   .ProjectsLineContainer-left, .ProjectsLineContainer-right {
     flex: 1;
@@ -1311,7 +1313,7 @@ main {
     /* основной заголовок (h3) — поверх h2, по центру */
   }
   .ProjectsLineContainer {
-    top: 40px;
+    top: -95px;
   }
   .Projects h2 {
     position: absolute;
@@ -1515,7 +1517,7 @@ main {
     font-size: 12px;
   }
   .skills .skillsLineContainer {
-    margin-top: -25px;
+    margin-top: -35px;
     margin-bottom: 20px;
   }
   .skills h3 {
