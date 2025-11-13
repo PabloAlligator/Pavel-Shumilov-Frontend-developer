@@ -5,7 +5,7 @@ window.addEventListener("load", function() {
     const content = document.getElementById("content");
 
     // Минимальное время показа прелоадера (в миллисекундах)
-    const minDisplayTime = 500; // = 2 секунды
+    const minDisplayTime = 200; // = 2 секунды
 
     const startTime = Date.now();
 
