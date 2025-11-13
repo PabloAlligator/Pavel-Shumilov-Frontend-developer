@@ -1578,6 +1578,7 @@ main {
   color: #ffffff;
   font-size: 36px;
   margin: 10px 0 8px;
+  margin-bottom: 50px;
 }
 .education h4 {
   color: #b7bac1;
@@ -1591,7 +1592,8 @@ main {
   justify-content: center;
   gap: 12px;
   margin: 8px 0 18px;
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 40px;
   z-index: 2;
 }
 .education .educationLineContainer-left {
@@ -1710,6 +1712,7 @@ main {
   }
   .education h3 {
     font-size: 20px;
+    margin-bottom: 10px;
   }
   .education h4 {
     font-size: 12px;
@@ -1749,7 +1752,7 @@ main {
   align-items: center;
   width: 100%;
   max-width: 200px;
-  margin-top: 450px;
+  margin-top: 420px;
   padding: 0 20px;
   position: absolute;
 }
