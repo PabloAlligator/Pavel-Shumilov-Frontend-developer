@@ -971,7 +971,7 @@ main {
                 top: 10px;
                 left: 50%;
                 transform: translateX(-50%);
-                font-size: 96px;
+                font-size: clamp(70px, 8vw, 44px);
                 /* масштаб для мобильных */
                 line-height: 0.9;
                 color: $LightGray;
@@ -985,7 +985,7 @@ main {
 
             & h3 {
                 position: absolute;
-                top: 35%;
+                top: 25%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 1;
@@ -1680,7 +1680,7 @@ main {
             top: -10px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: clamp(50px, 8vw, 44px);
+            font-size: clamp(60px, 8vw, 44px);
             margin: 0;
             z-index: 0;
             color: $gray;
@@ -1886,7 +1886,7 @@ main {
         }
 
         &-bg {
-            font-size: 90px;
+           font-size: clamp(50px, 8vw, 44px);
             top: 60px;
         }
 
@@ -2146,8 +2146,8 @@ main {
         margin: 28px auto;
 
         h2 {
-            font-size: 36px;
-            top: 6px;
+            font-size: clamp(50px, 8vw, 44px);
+            top: 1px;
             margin-bottom: 10px;
 
             // display: none;
@@ -2494,7 +2494,7 @@ main {
         padding: 28px 12px;
 
         h2 {
-            font-size: 47px;
+            font-size: clamp(50px, 8vw, 44px);
             font-weight: 700
         }
 

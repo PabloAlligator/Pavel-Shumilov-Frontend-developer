@@ -786,7 +786,7 @@ main {
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 96px;
+    font-size: clamp(70px, 8vw, 44px);
     /* масштаб для мобильных */
     line-height: 0.9;
     color: #b7bac1;
@@ -799,7 +799,7 @@ main {
   }
   .section__two-title h3 {
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -1329,7 +1329,7 @@ main {
     top: -10px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: clamp(50px, 8vw, 44px);
+    font-size: clamp(60px, 8vw, 44px);
     margin: 0;
     z-index: 0;
     color: #1b1b1b;
@@ -1498,7 +1498,7 @@ main {
     grid-template-columns: repeat(2, 1fr);
   }
   .skills-bg {
-    font-size: 90px;
+    font-size: clamp(50px, 8vw, 44px);
     top: 60px;
   }
   .skills-decor {
@@ -1715,8 +1715,8 @@ main {
     /* убрать большой фон на очень узких экранах */
   }
   .education h2 {
-    font-size: 36px;
-    top: 6px;
+    font-size: clamp(50px, 8vw, 44px);
+    top: 1px;
     margin-bottom: 10px;
   }
   .education h3 {
@@ -2013,7 +2013,7 @@ main {
     padding: 28px 12px;
   }
   .contacts h2 {
-    font-size: 47px;
+    font-size: clamp(50px, 8vw, 44px);
     font-weight: 700;
   }
   .contacts h3 {
