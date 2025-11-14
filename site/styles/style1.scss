@@ -18,6 +18,10 @@ $bright-green: #4ade80;
 $yellow: #ffd34d;
 $yellow-dark: #ffb700;
 $Light-blue: #4a86ff;
+$dark-pink: #b3006a;
+$medium-pink: #ff008c;
+$light-pink: #ff66b2;
+$bright-pink: #ff33aa;
 // переменные для анимации
 $animation-duration: 6s;
 $animation-delay-step: 1s;
@@ -1409,8 +1413,6 @@ main {
             }
         }
 
-
-
         &:hover {
             transform:
                 perspective(1200px) translateY(-20px) rotateX(12deg) rotateY(8deg) scale(1.02);
@@ -1505,6 +1507,156 @@ main {
             border: 1px solid rgba(74, 222, 128, 0.3);
         }
     }
+&Three {
+    width: 760px;
+    height: 550px;
+    border: 3px solid rgba($medium-pink, 0.3);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    background: linear-gradient(180deg,
+            $dark-pink 0%,
+            $medium-pink 25%,
+            $light-pink 75%,
+            $bright-pink 100%),
+        radial-gradient(circle at 20% 30%, rgba(255, 0, 140, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 51, 170, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(255, 102, 178, 0.15) 0%, transparent 40%);
+
+    &Head {
+        height: 130px;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 122px;
+
+        .LeftText {
+            margin-top: 32px;
+            margin-left: 48px;
+            color: #68023d;
+        }
+
+        .Arrow {
+            margin-top: 52px;
+            margin-right: 48px;
+            width: 40px;
+            height: 40px;
+            display: block;
+            transition: transform 220ms ease, filter 220ms ease;
+            filter: drop-shadow(0 8px 22px rgba(255, 0, 140, 0.25));
+        }
+    }
+
+    &Block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & img {
+            margin-top: 30px;
+            width: 540px;
+            height: 320px;
+            border-radius: 8px;
+            clip-path: inset(0 0 57px 0);
+            border: 2px solid rgba($medium-pink, 0.3);
+            filter: drop-shadow(0 0 15px rgba($medium-pink, 0.4)) drop-shadow(0 0 30px rgba($dark-pink, 0.3));
+        }
+    }
+
+    &:hover {
+        transform: perspective(1200px) translateY(-20px) rotateX(12deg) rotateY(8deg) scale(1.02);
+
+        box-shadow:
+            0 45px 90px rgba(0, 0, 0, 0.6),
+            0 0 0 2px rgba($medium-pink, 0.6),
+            0 0 200px rgba($dark-pink, 0.8),
+            0 0 300px rgba($light-pink, 0.4);
+
+        background: linear-gradient(180deg,
+                darken($dark-pink, 5%) 0%,
+                $medium-pink 20%,
+                lighten($light-pink, 10%) 70%,
+                $bright-pink 100%),
+            radial-gradient(circle at 20% 30%, rgba($medium-pink, 0.5) 0%, transparent 60%),
+            radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+
+        & .ProjectsThreeBlock img {
+            filter: drop-shadow(0 0 20px rgba($medium-pink, 0.7)) drop-shadow(0 0 40px rgba($dark-pink, 0.5)) drop-shadow(0 0 60px rgba($light-pink, 0.3));
+        }
+    }
+}
+
+.project-details-three {
+    padding: 30px;
+
+    h3 {
+        position: static;
+        font-size: 2rem;
+        color: $bright-pink;
+        margin-bottom: 10px;
+        font-family: $MainFont;
+        margin-top: 0;
+    }
+
+    &>p {
+        color: $LightGray;
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+}
+
+.project-description-three {
+    margin-bottom: 30px;
+
+    h4 {
+        position: static;
+        color: $white;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        font-family: $MainFont;
+        margin-top: 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            color: $LightGray;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+
+            &::before {
+                content: "▹";
+                position: absolute;
+                left: 0;
+                color: $bright-pink;
+            }
+        }
+    }
+}
+
+.tech-stack-three {
+    margin-bottom: 30px;
+
+    .tech-tag {
+        display: inline-block;
+        background: rgba($medium-pink, 0.1);
+        color: $bright-pink;
+        padding: 5px 15px;
+        border-radius: 20px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        border: 1px solid rgba($medium-pink, 0.3);
+    }
+}
 }
 
 @media (max-width: 900px) {
@@ -1594,7 +1746,8 @@ main {
 
         /* карточки проектов — занимают всю доступную ширину */
         &One,
-        &Two {
+        &Two,
+        &Three {
             width: 100%;
             max-width: 980px;
             height: auto;
@@ -1628,7 +1781,8 @@ main {
 
         /* детали проектов — делаем читабельными */
         .project-details-one,
-        .project-details-two {
+        .project-details-two,
+        .project-details-three {
             width: 100%;
             max-width: 980px;
             padding: 14px;
@@ -1662,6 +1816,8 @@ main {
             gap: 8px;
         }
     }
+
+    
 }
 
 /* донастройки для узких экранов */
@@ -1692,7 +1848,6 @@ main {
         h3 {
             position: absolute;
             left: 50%;
-            /* уменьши/увеличь множитель или заменяй top на конкретное px, чтобы подвинуть выше/ниже */
             top: calc(12px + (clamp(32px, 8vw, 44px) * 0.55));
             transform: translate(-50%, -60%);
             /* поднимет чуть выше центра */
@@ -1720,7 +1875,8 @@ main {
         }
 
         .project-details-one,
-        .project-details-two {
+        .project-details-two,
+        .project-details-three {
             h3 {
                 font-size: 20px;
                 margin-left: 50%;
@@ -1735,6 +1891,13 @@ main {
                 text-align: center;
             }
         }
+
+        .project-details-three {
+    p {
+        margin-left: 130px; // или другое значение
+        transform: translateX(-40%); // можно комбинировать
+    }
+}
 
         .tech-tag {
             padding: 6px 10px;
@@ -1897,7 +2060,7 @@ main {
 
     @media (max-width: 520px) {
         padding: 100px 8px 60px;
-        margin-top: -100px;
+        margin-top: 100px;
 
         &-container {
             grid-template-columns: repeat(2, 1fr);

@@ -1182,6 +1182,120 @@ main {
   font-size: 0.9rem;
   border: 1px solid rgba(74, 222, 128, 0.3);
 }
+.ProjectsThree {
+  width: 760px;
+  height: 550px;
+  border: 3px solid rgba(255, 0, 140, 0.3);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  align-items: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  background: linear-gradient(180deg, #b3006a 0%, #ff008c 25%, #ff66b2 75%, #ff33aa 100%), radial-gradient(circle at 20% 30%, rgba(255, 0, 140, 0.25) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 51, 170, 0.2) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(255, 102, 178, 0.15) 0%, transparent 40%);
+}
+.ProjectsThreeHead {
+  height: 130px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 122px;
+}
+.ProjectsThreeHead .LeftText {
+  margin-top: 32px;
+  margin-left: 48px;
+  color: #68023d;
+}
+.ProjectsThreeHead .Arrow {
+  margin-top: 52px;
+  margin-right: 48px;
+  width: 40px;
+  height: 40px;
+  display: block;
+  transition: transform 220ms ease, filter 220ms ease;
+  filter: drop-shadow(0 8px 22px rgba(255, 0, 140, 0.25));
+}
+.ProjectsThreeBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ProjectsThreeBlock img {
+  margin-top: 30px;
+  width: 540px;
+  height: 320px;
+  border-radius: 8px;
+  clip-path: inset(0 0 57px 0);
+  border: 2px solid rgba(255, 0, 140, 0.3);
+  filter: drop-shadow(0 0 15px rgba(255, 0, 140, 0.4)) drop-shadow(0 0 30px rgba(179, 0, 106, 0.3));
+}
+.ProjectsThree:hover {
+  transform: perspective(1200px) translateY(-20px) rotateX(12deg) rotateY(8deg) scale(1.02);
+  box-shadow: 0 45px 90px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(255, 0, 140, 0.6), 0 0 200px rgba(179, 0, 106, 0.8), 0 0 300px rgba(255, 102, 178, 0.4);
+  background: linear-gradient(180deg, rgb(153.5, 0, 90.8994413408) 0%, #ff008c 20%, rgb(255, 153, 203.6666666667) 70%, #ff33aa 100%), radial-gradient(circle at 20% 30%, rgba(255, 0, 140, 0.5) 0%, transparent 60%), radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+.ProjectsThree:hover .ProjectsThreeBlock img {
+  filter: drop-shadow(0 0 20px rgba(255, 0, 140, 0.7)) drop-shadow(0 0 40px rgba(179, 0, 106, 0.5)) drop-shadow(0 0 60px rgba(255, 102, 178, 0.3));
+}
+.Projects .project-details-three {
+  padding: 30px;
+}
+.Projects .project-details-three h3 {
+  position: static;
+  font-size: 2rem;
+  color: #ff33aa;
+  margin-bottom: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-top: 0;
+}
+.Projects .project-details-three > p {
+  color: #b7bac1;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.Projects .project-description-three {
+  margin-bottom: 30px;
+}
+.Projects .project-description-three h4 {
+  position: static;
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-top: 0;
+}
+.Projects .project-description-three ul {
+  list-style: none;
+  padding: 0;
+}
+.Projects .project-description-three ul li {
+  color: #b7bac1;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+.Projects .project-description-three ul li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #ff33aa;
+}
+.Projects .tech-stack-three {
+  margin-bottom: 30px;
+}
+.Projects .tech-stack-three .tech-tag {
+  display: inline-block;
+  background: rgba(255, 0, 140, 0.1);
+  color: #ff33aa;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 0, 140, 0.3);
+}
 
 @media (max-width: 900px) {
   .Projects {
@@ -1253,7 +1367,7 @@ main {
     align-items: center;
     margin-top: 20px;
   }
-  .ProjectsOne, .ProjectsTwo {
+  .ProjectsOne, .ProjectsTwo, .ProjectsThree {
     width: 100%;
     max-width: 980px;
     height: auto;
@@ -1266,15 +1380,15 @@ main {
     box-sizing: border-box;
     /* сбрасываем широкие бордеры/отступы для мобильных */
   }
-  .ProjectsOneHead, .ProjectsTwoHead {
+  .ProjectsOneHead, .ProjectsTwoHead, .ProjectsThreeHead {
     margin-bottom: 12px;
     height: auto;
     gap: 12px;
   }
-  .ProjectsOneBlock, .ProjectsTwoBlock {
+  .ProjectsOneBlock, .ProjectsTwoBlock, .ProjectsThreeBlock {
     width: 100%;
   }
-  .ProjectsOneBlock img, .ProjectsTwoBlock img {
+  .ProjectsOneBlock img, .ProjectsTwoBlock img, .ProjectsThreeBlock img {
     width: 100%;
     height: auto;
     max-width: 100%;
@@ -1282,7 +1396,8 @@ main {
     clip-path: none;
   }
   .Projects .project-details-one,
-  .Projects .project-details-two {
+  .Projects .project-details-two,
+  .Projects .project-details-three {
     width: 100%;
     max-width: 980px;
     padding: 14px;
@@ -1290,12 +1405,14 @@ main {
     box-sizing: border-box;
   }
   .Projects .project-details-one h3,
-  .Projects .project-details-two h3 {
+  .Projects .project-details-two h3,
+  .Projects .project-details-three h3 {
     font-size: 22px;
     margin-bottom: 8px;
   }
   .Projects .project-details-one > p,
-  .Projects .project-details-two > p {
+  .Projects .project-details-two > p,
+  .Projects .project-details-three > p {
     font-size: 15px;
     color: #b7bac1;
     margin-bottom: 12px;
@@ -1338,7 +1455,6 @@ main {
   .Projects h3 {
     position: absolute;
     left: 50%;
-    /* уменьши/увеличь множитель или заменяй top на конкретное px, чтобы подвинуть выше/ниже */
     top: calc(12px + clamp(32px, 8vw, 44px) * 0.55);
     transform: translate(-50%, -60%);
     /* поднимет чуть выше центра */
@@ -1360,18 +1476,24 @@ main {
     border-width: 2px;
   }
   .Projects .project-details-one h3,
-  .Projects .project-details-two h3 {
+  .Projects .project-details-two h3,
+  .Projects .project-details-three h3 {
     font-size: 20px;
     margin-left: 50%;
   }
   .Projects .project-details-one p,
-  .Projects .project-details-two p {
+  .Projects .project-details-two p,
+  .Projects .project-details-three p {
     font-size: 14px;
     transform: translateX(-50%);
     margin-left: 50%;
     margin-top: -6%;
     white-space: nowrap;
     text-align: center;
+  }
+  .Projects .project-details-three p {
+    margin-left: 130px;
+    transform: translateX(-40%);
   }
   .Projects .tech-tag {
     padding: 6px 10px;
@@ -1508,7 +1630,7 @@ main {
 @media (max-width: 520px) {
   .skills {
     padding: 100px 8px 60px;
-    margin-top: -100px;
+    margin-top: 100px;
   }
   .skills-container {
     grid-template-columns: repeat(2, 1fr);
