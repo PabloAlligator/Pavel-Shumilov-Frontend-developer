@@ -754,9 +754,10 @@ main {
         &-mdl {
             & h4 {
                 font-size: 14px;
+
                 &:nth-of-type(2) {
-                font-size: 14px;
-        }
+                    font-size: 14px;
+                }
 
             }
         }
@@ -1183,7 +1184,7 @@ main {
         display: flex;
         flex-direction: column;
         margin-top: 400px; // Отступ от верхнего контента
-        margin-bottom: 100px;
+        // margin-bottom: 100px;
         align-items: center;
         transform-style: preserve-3d;
         perspective: 1000px;
@@ -1356,6 +1357,7 @@ main {
         border-radius: 12px;
         display: flex;
         flex-direction: column;
+        margin-top: -150px;
         margin-bottom: 100px;
         align-items: center;
         transform-style: preserve-3d;
@@ -1507,156 +1509,282 @@ main {
             border: 1px solid rgba(74, 222, 128, 0.3);
         }
     }
-&Three {
-    width: 760px;
-    height: 550px;
-    border: 3px solid rgba($medium-pink, 0.3);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 100px;
-    align-items: center;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
-    background: linear-gradient(180deg,
-            $dark-pink 0%,
-            $medium-pink 25%,
-            $light-pink 75%,
-            $bright-pink 100%),
-        radial-gradient(circle at 20% 30%, rgba(255, 0, 140, 0.25) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 51, 170, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(255, 102, 178, 0.15) 0%, transparent 40%);
 
-    &Head {
-        height: 130px;
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-        margin-bottom: 122px;
-
-        .LeftText {
-            margin-top: 32px;
-            margin-left: 48px;
-            color: #68023d;
-        }
-
-        .Arrow {
-            margin-top: 52px;
-            margin-right: 48px;
-            width: 40px;
-            height: 40px;
-            display: block;
-            transition: transform 220ms ease, filter 220ms ease;
-            filter: drop-shadow(0 8px 22px rgba(255, 0, 140, 0.25));
-        }
-    }
-
-    &Block {
+    &Three {
+        width: 760px;
+        height: 550px;
+        border: 3px solid rgba($medium-pink, 0.3);
+        border-radius: 12px;
         display: flex;
         flex-direction: column;
+        margin-bottom: 100px;
         align-items: center;
-
-        & img {
-            margin-top: 30px;
-            width: 540px;
-            height: 320px;
-            border-radius: 8px;
-            clip-path: inset(0 0 57px 0);
-            border: 2px solid rgba($medium-pink, 0.3);
-            filter: drop-shadow(0 0 15px rgba($medium-pink, 0.4)) drop-shadow(0 0 30px rgba($dark-pink, 0.3));
-        }
-    }
-
-    &:hover {
-        transform: perspective(1200px) translateY(-20px) rotateX(12deg) rotateY(8deg) scale(1.02);
-
-        box-shadow:
-            0 45px 90px rgba(0, 0, 0, 0.6),
-            0 0 0 2px rgba($medium-pink, 0.6),
-            0 0 200px rgba($dark-pink, 0.8),
-            0 0 300px rgba($light-pink, 0.4);
-
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
         background: linear-gradient(180deg,
-                darken($dark-pink, 5%) 0%,
-                $medium-pink 20%,
-                lighten($light-pink, 10%) 70%,
+                $dark-pink 0%,
+                $medium-pink 25%,
+                $light-pink 75%,
                 $bright-pink 100%),
-            radial-gradient(circle at 20% 30%, rgba($medium-pink, 0.5) 0%, transparent 60%),
-            radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            radial-gradient(circle at 20% 30%, rgba(255, 0, 140, 0.25) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(255, 51, 170, 0.2) 0%, transparent 50%),
+            radial-gradient(circle at 40% 80%, rgba(255, 102, 178, 0.15) 0%, transparent 40%);
 
-        & .ProjectsThreeBlock img {
-            filter: drop-shadow(0 0 20px rgba($medium-pink, 0.7)) drop-shadow(0 0 40px rgba($dark-pink, 0.5)) drop-shadow(0 0 60px rgba($light-pink, 0.3));
+        &Head {
+            height: 130px;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 122px;
+
+            .LeftText {
+                margin-top: 32px;
+                margin-left: 48px;
+                color: #68023d;
+            }
+
+            .Arrow {
+                margin-top: 52px;
+                margin-right: 48px;
+                width: 40px;
+                height: 40px;
+                display: block;
+                transition: transform 220ms ease, filter 220ms ease;
+                filter: drop-shadow(0 8px 22px rgba(255, 0, 140, 0.25));
+            }
+        }
+
+        &Block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & img {
+                margin-top: 30px;
+                width: 540px;
+                height: 320px;
+                border-radius: 8px;
+                clip-path: inset(0 0 57px 0);
+                // border: 2px solid rgba($medium-pink, 0.3);
+                // filter: drop-shadow(0 0 15px rgba($medium-pink, 0.4)) drop-shadow(0 0 30px rgba($dark-pink, 0.3));
+            }
+        }
+
+        &:hover {
+            transform: perspective(1200px) translateY(-20px) rotateX(12deg) rotateY(8deg) scale(1.02);
+
+            box-shadow:
+                0 45px 90px rgba(0, 0, 0, 0.6),
+                0 0 0 2px rgba($medium-pink, 0.6),
+                0 0 200px rgba($dark-pink, 0.8),
+                0 0 300px rgba($light-pink, 0.4);
+
+            background: linear-gradient(180deg,
+                    darken($dark-pink, 5%) 0%,
+                    $medium-pink 20%,
+                    lighten($light-pink, 10%) 70%,
+                    $bright-pink 100%),
+                radial-gradient(circle at 20% 30%, rgba($medium-pink, 0.5) 0%, transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+
+            & .ProjectsThreeBlock img {
+                filter: drop-shadow(0 0 20px rgba($medium-pink, 0.7)) drop-shadow(0 0 40px rgba($dark-pink, 0.5)) drop-shadow(0 0 60px rgba($light-pink, 0.3));
+            }
+        }
+
+    }
+
+    .project-details-three {
+        padding: 30px;
+
+        h3 {
+            position: static;
+            font-size: 2rem;
+            color: $bright-pink;
+            margin-bottom: 10px;
+            font-family: $MainFont;
+            margin-top: 0;
+        }
+
+        &>p {
+            color: $LightGray;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
         }
     }
-}
 
-.project-details-three {
-    padding: 30px;
-
-    h3 {
-        position: static;
-        font-size: 2rem;
-        color: $bright-pink;
-        margin-bottom: 10px;
-        font-family: $MainFont;
-        margin-top: 0;
-    }
-
-    &>p {
-        color: $LightGray;
-        font-size: 1.2rem;
+    .project-description-three {
         margin-bottom: 30px;
-    }
-}
 
-.project-description-three {
-    margin-bottom: 30px;
+        h4 {
+            position: static;
+            color: $white;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-family: $MainFont;
+            margin-top: 0;
+        }
 
-    h4 {
-        position: static;
-        color: $white;
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-        font-family: $MainFont;
-        margin-top: 0;
-    }
+        ul {
+            list-style: none;
+            padding: 0;
 
-    ul {
-        list-style: none;
-        padding: 0;
+            li {
+                color: $LightGray;
+                margin-bottom: 10px;
+                padding-left: 20px;
+                position: relative;
 
-        li {
-            color: $LightGray;
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-
-            &::before {
-                content: "▹";
-                position: absolute;
-                left: 0;
-                color: $bright-pink;
+                &::before {
+                    content: "▹";
+                    position: absolute;
+                    left: 0;
+                    color: $bright-pink;
+                }
             }
         }
     }
-}
 
-.tech-stack-three {
-    margin-bottom: 30px;
+    .tech-stack-three {
+        margin-bottom: 30px;
 
-    .tech-tag {
-        display: inline-block;
-        background: rgba($medium-pink, 0.1);
-        color: $bright-pink;
-        padding: 5px 15px;
-        border-radius: 20px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        font-size: 0.9rem;
-        border: 1px solid rgba($medium-pink, 0.3);
+        .tech-tag {
+            display: inline-block;
+            background: rgba($medium-pink, 0.1);
+            color: $bright-pink;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            border: 1px solid rgba($medium-pink, 0.3);
+        }
     }
-}
+
+// четвертый проект
+
+    .ProjectsThree--second {
+        background: linear-gradient(180deg,
+                #2C5530 0%,
+                /* Темно-зеленый гор */
+                #4A7C59 25%,
+                /* Зеленый лесов */
+                #8FB996 75%,
+                /* Светло-зеленый степей */
+                #D4E6B5 100%),
+            /* Светло-желтый */
+            radial-gradient(circle at 20% 30%, rgba(79, 111, 82, 0.25) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(143, 185, 150, 0.2) 0%, transparent 50%),
+            radial-gradient(circle at 40% 80%, rgba(44, 85, 48, 0.15) 0%, transparent 40%);
+
+        border: 3px solid rgba(79, 111, 82, 0.3);
+
+        .LeftText {
+            color: #1A331C;
+        }
+
+        .Arrow {
+            filter: drop-shadow(0 8px 22px rgba(79, 111, 82, 0.25));
+        }
+
+        &:hover {
+            box-shadow:
+                0 45px 90px rgba(0, 0, 0, 0.6),
+                0 0 0 2px rgba(79, 111, 82, 0.6),
+                0 0 200px rgba(44, 85, 48, 0.8),
+                0 0 300px rgba(143, 185, 150, 0.4);
+
+            background: linear-gradient(180deg,
+                    darken(#2C5530, 5%) 0%,
+                    #4A7C59 20%,
+                    lighten(#8FB996, 10%) 70%,
+                    #D4E6B5 100%),
+                radial-gradient(circle at 20% 30%, rgba(79, 111, 82, 0.5) 0%, transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+
+            .ProjectsThreeBlock img {
+                filter: drop-shadow(0 0 20px rgba(79, 111, 82, 0.7)) drop-shadow(0 0 40px rgba(44, 85, 48, 0.5)) drop-shadow(0 0 60px rgba(143, 185, 150, 0.3));
+            }
+        }
+    }
+
+    .project-details-three--second {
+        h3 {
+            color: #98FB98;
+        }
+
+        .project-details-three {
+            padding: 30px;
+
+            h3 {
+                position: static;
+                font-size: 2rem;
+                color: #98FB98;
+                /* Светло-зеленый вместо $bright-pink */
+                margin-bottom: 10px;
+                font-family: $MainFont;
+                margin-top: 0;
+            }
+
+            &>p {
+                color: #E8F5E8;
+                /* Светло-серый с зеленым оттенком */
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+        }
+
+        .project-description-three {
+            margin-bottom: 30px;
+
+            h4 {
+                position: static;
+                color: #FFFFFF;
+                /* Белый */
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+                font-family: $MainFont;
+                margin-top: 0;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    color: #E8F5E8;
+                    /* Светло-серый с зеленым оттенком */
+                    margin-bottom: 10px;
+                    padding-left: 20px;
+                    position: relative;
+
+                    &::before {
+                        content: "▹";
+                        position: absolute;
+                        left: 0;
+                        color: #98FB98;
+                        /* Светло-зеленый вместо $bright-pink */
+                    }
+                }
+            }
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: rgba(85, 107, 47, 0.1);
+            /* Оливково-зеленый вместо $medium-pink */
+            color: #98FB98;
+            /* Светло-зеленый вместо $bright-pink */
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(85, 107, 47, 0.3);
+            /* Оливково-зеленый вместо $medium-pink */
+        }
+    }
 }
 
 @media (max-width: 900px) {
@@ -1817,7 +1945,7 @@ main {
         }
     }
 
-    
+
 }
 
 /* донастройки для узких экранов */
@@ -1893,11 +2021,11 @@ main {
         }
 
         .project-details-three {
-    p {
-        margin-left: 130px; // или другое значение
-        transform: translateX(-40%); // можно комбинировать
-    }
-}
+            p {
+                margin-left: 130px; // или другое значение
+                transform: translateX(-40%); // можно комбинировать
+            }
+        }
 
         .tech-tag {
             padding: 6px 10px;
@@ -2049,7 +2177,7 @@ main {
         }
 
         &-bg {
-           font-size: clamp(50px, 8vw, 44px);
+            font-size: clamp(50px, 8vw, 44px);
             top: 60px;
         }
 
