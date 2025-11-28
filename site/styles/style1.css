@@ -230,8 +230,8 @@ main {
 
 .shadow {
   content: "";
-  width: 3vh;
-  height: 3vh;
+  width: 5vh;
+  height: 5vh;
   background-color: #000000;
   position: absolute;
   left: 0;
