@@ -306,14 +306,6 @@ main {
     }
 }
 
-.shadow {
-    content: "";
-    width: 5vh;
-    height: 5vh;
-    background-color: $black;
-    position: absolute;
-    left: 0;
-}
 
 /* Кнопка-бургер */
 .burger {
@@ -395,6 +387,15 @@ main {
 
 
 
+.shadow {
+    content: "";
+    width: 5vh;
+    height: 5vh;
+    background-color: $black;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 
 
 // секция 1
