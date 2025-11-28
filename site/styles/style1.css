@@ -228,6 +228,15 @@ main {
   }
 }
 
+.shadow {
+  content: "";
+  width: 3vh;
+  height: 3vh;
+  background-color: #000000;
+  position: absolute;
+  left: 0;
+}
+
 /* Кнопка-бургер */
 .burger {
   display: none;
