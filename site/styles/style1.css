@@ -75,7 +75,6 @@ main {
   /* Навигация внутри меню */
   /* Социальные иконки внизу панели */
   /* Указатель курсора для бургеров */
-  /* Мобильные правки: панель на весь экран и крупнее элементы */
 }
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.9);
@@ -466,6 +465,9 @@ main {
   justify-content: center;
   margin-top: 100px;
 }
+.section__one-hgh br {
+  display: none;
+}
 .section__one-hgh h1 {
   font-size: 74px;
   font-weight: 700;
@@ -566,11 +568,15 @@ main {
     width: 100%;
     margin-top: 20px;
   }
+  .section__one-hgh br {
+    display: block;
+  }
   .section__one-hgh h1 {
-    font-size: 28px;
+    font-size: 34px;
     letter-spacing: 1px;
     text-align: center;
     display: block;
+    margin-top: -48px;
   }
   .section__one-hgh .first,
   .section__one-hgh .X {
@@ -788,7 +794,7 @@ main {
 @media (max-width: 768px) {
   .section__two {
     height: auto;
-    margin-top: 120px;
+    margin-top: 0px;
     padding: 24px 16px;
     align-items: center;
   }
@@ -797,7 +803,7 @@ main {
     padding: 0;
     min-height: 180px;
     position: relative;
-    margin-bottom: 12px;
+    margin-bottom: 0px;
   }
   .section__two-title h5 {
     position: absolute;

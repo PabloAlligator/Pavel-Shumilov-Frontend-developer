@@ -73,33 +73,6 @@ body.preloader-active {
     height: 100%;
 }
 
-// #preloader {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background: #0a0a0a;
-//     /* под стиль твоего сайта */
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     z-index: 9999;
-//     transition: opacity 0.6s ease;
-// }
-
-// /* Изображение крокодильчика */
-// .preloader-img {
-//     width: 160px;
-//     /* можешь изменить размер */
-//     animation: jump 1.4s ease-in-out infinite;
-// }
-
-// /* Небольшая анимация — "подпрыгивает" во время загрузки */
-// // @keyframes jump {
-// //   0%, 100% { transform: translateY(0); }
-// //   50% { transform: translateY(-12px); }
-// // }
 
 * {
     box-sizing: border-box;
@@ -313,7 +286,6 @@ main {
         cursor: pointer;
     }
 
-    /* Мобильные правки: панель на весь экран и крупнее элементы */
     @media (max-width: 480px) {
         .menu-panel {
             width: 95%;
@@ -606,7 +578,10 @@ main {
         display: flex;
         justify-content: center;
         margin-top: 100px;
-        // border: 1px solid orange;
+
+        br {
+            display: none;
+        }
 
         & h1 {
             font-size: 74px;
@@ -730,12 +705,16 @@ main {
         &-hgh {
             width: 100%;
             margin-top: 20px;
+            br {
+                display: block;
+            }
 
             & h1 {
-                font-size: clamp(20px, 28px, 34px);
+                font-size: clamp(20px, 40px, 34px);
                 letter-spacing: 1px;
                 text-align: center;
                 display: block;
+                margin-top: -48px;
             }
 
             .first,
@@ -998,7 +977,7 @@ main {
 @media (max-width: 768px) {
     .section__two {
         height: auto;
-        margin-top: 120px;
+        margin-top: 0px;
         padding: 24px 16px;
         align-items: center;
 
@@ -1007,7 +986,7 @@ main {
             padding: 0;
             min-height: 180px;
             position: relative;
-            margin-bottom: 12px;
+            margin-bottom: 0px;
 
             & h5 {
                 position: absolute;
